@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+
+import ReactDOM from 'react-dom';
+import React,{ useEffect, useState } from "react";
+import styles from './App.module.css';
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import firstfloor from "./component/firstfloor";
+import Navbar from "./Navbar"
+import Firstfloor from "./component/firstfloor"
+import Secondfloor from "./component/secondfloor"
+import Thirdfloor from "./component/thirdfloor"
+import Fourthfloor from "./component/fourthfloor"
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ 
+    
+    return (
+        <body>
+           <>
+      <Navbar />
+      <div>
+        <Routes>
+          <Route path="/firstfloor" element={<Firstfloor />} />
+          <Route path="/secondfloor" element={<Secondfloor />} />
+          <Route path="/thirdfloor" element={<Thirdfloor />} />
+          <Route path="/fourthfloor" element={<Fourthfloor />} />
+        </Routes>
+      </div>
+    </>
+          
+        </body>
+      );
 }
+
 
 export default App;
